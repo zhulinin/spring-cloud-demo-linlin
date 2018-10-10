@@ -1,0 +1,14 @@
+server:
+  port: 8050 # 注册中心占用8051端口
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: localhost:8050
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  #其实就是 http://localhost:8050/eureka/
+spring: 
+  cloud: 
+    config: false

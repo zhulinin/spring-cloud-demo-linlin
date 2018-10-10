@@ -1,0 +1,21 @@
+server:
+  port: 8051
+spring:
+  application:
+    name: config-center
+  profiles:
+    active: native  #设置为本地启动的方式，而不是通过git
+  cloud:
+    config:
+      server:
+        native: 
+          searchLocations: classpath:/config
+eureka:
+  instance:
+    hostname: 192.168.0.231
+    instance-id: 192.168.0.231:8051
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.0.231:8050/eureka/  #注册中心地址
+      
+   

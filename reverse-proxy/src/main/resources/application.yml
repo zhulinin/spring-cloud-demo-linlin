@@ -1,0 +1,39 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.0.231:8050/eureka/
+  instance:
+    hostname: 192.168.0.231
+    instance-id: 192.168.0.231:8053
+spring:
+  application:
+    name: gateway
+  sleuth:
+    sampler:
+      percentage: 1.0
+  zipkin:
+    base-url: http://192.168.0.231:8052
+ 
+server:
+  port: 8053
+  #server.address= # bind to a specific NIC
+  #server.session-timeout= # session timeout in seconds
+  #the context path, defaults to '/'
+  #server.context-path=/spring-boot
+  #server.servlet-path= # the servlet path, defaults to '/'
+  #server.tomcat.access-log-pattern= # log pattern of the access log
+  #server.tomcat.access-log-enabled=false # is access logging enabled
+  #server.tomcat.protocol-header=x-forwarded-proto # ssl forward headers
+  #server.tomcat.remote-ip-header=x-forwarded-for
+  #server.tomcat.basedir=/tmp # base dir (usually not needed, defaults to tmp)
+  #server.tomcat.background-processor-delay=30; # in seconds
+  #server.tomcat.max-threads = 0 # number of threads in protocol handler
+  #server.tomcat.uri-encoding = UTF-8 # character encoding to use for URL decoding
+ 
+zuul:
+  routes:
+    service0: /service/0/**
+    service1: /service/1/** 
+ 
+
+

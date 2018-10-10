@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: service0
+  sleuth:
+    sampler:
+      percentage: 1.0
+  zipkin:
+    base-url: http://192.168.0.231:8052
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.0.231:8050/eureka/  #注册中心地址
+  instance:
+    hostname: 192.168.0.231
+    instance-id: http://192.168.0.231:8060
+server:
+  port: 8060

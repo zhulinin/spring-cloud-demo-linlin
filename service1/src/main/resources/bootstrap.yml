@@ -1,0 +1,9 @@
+
+spring: 
+  cloud:
+      config:
+        uri: http://192.168.0.231:8051
+        enabled: true
+        profile: dev
+        #label: master
+ 

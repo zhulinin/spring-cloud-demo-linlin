@@ -1,0 +1,14 @@
+ 
+spring:
+  application:
+    name: zipkin-server
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.0.231:8050/eureka/  #注册中心地址
+  instance:
+    hostname: 192.168.0.231
+    instance-id: http://192.168.0.231:8052
+server:
+  port: 8052
+ 
